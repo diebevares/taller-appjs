@@ -1,0 +1,19 @@
+.offset {
+	@each $key, $value in $grid-response-base  {
+		@if($key != 'xs') {
+			@include response-to($key+'-and-up') {
+				@for $i from 1 through $grid-columns {
+					&-#{$key}-#{$i} {
+						@include make-offset($i);
+					}
+				}
+			}
+		} @else {
+			@for $i from 1 through $grid-columns {
+				&-#{$i} {
+					@include make-offset($i);
+				}
+			}
+		}
+	}
+}

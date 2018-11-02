@@ -1,0 +1,28 @@
+.row {
+	@include make-row();
+}
+
+[class*='col-'] {
+	box-sizing: border-box;
+	@include make-col-base();
+}
+
+.col {
+	@each $key, $value in $grid-response-base {
+		@if($key != 'xs') {
+			@include response-to($key+'-and-up') {
+				@for $i from 1 through $grid-columns {
+					&-#{$key}-#{$i} {
+						@include make-col($i);
+					}
+				}
+			}
+		} @else {
+			@for $i from 1 through $grid-columns {
+				&-#{$i} {
+					@include make-col($i);
+				}
+			}
+		}
+	}
+}

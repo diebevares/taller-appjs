@@ -1,0 +1,50 @@
+// ======================================================
+//	Base Site
+// ======================================================
+$width-page: 960px;
+
+
+
+// ======================================================
+//	Fonts
+// ======================================================
+$font-base: Arial, Helvetica, sans-serif;
+$font-base-size: 13px;
+$font-base-color: #5F5F5F;
+
+
+
+// ======================================================
+//	Grid Response
+// ======================================================
+$grid-columns: 12;
+$grid-gutter: 30;
+$grid-response-base: (
+	xs: (0px, 575px),
+	sm: (576px, 769px),
+	md: (768px, 991px),
+	lg: (992px, 1199px),
+	xl: 1200px,
+);
+
+$grid-response-custom: ();
+$grid-response: map-merge($grid-response-base, $grid-response-custom);
+
+
+
+// ======================================================
+//	Form
+// ======================================================
+$field-padding: 6px 12px;
+$field-border: 1px solid #CED4DA;
+$field-lineheight: 1.5;
+$field-radius: 4px;
+
+$field-valid-border: #36ff97;
+$field-valid-shadow: 0 0 3px 3px rgba(#00ff1E, 0.25);
+
+$field-invalid-border: #E64242;
+$field-invalid-shadow: 0 0 3px 3px rgba(#FF1E00, 0.25);
+
+$field-focus-border: #80BDFF;
+$field-focus-shadow: 0 0 3px 3px rgba(#007BFF, 0.25);

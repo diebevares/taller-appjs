@@ -1,0 +1,32 @@
+@import '../../variables';
+@import '../../mixin';
+
+.feeds {
+	padding: 0px;
+	margin-top: 0px;
+	list-style: none;
+}
+
+.feed {
+	width: 100%;
+	padding: 12px;
+	margin-bottom: 16px;
+	background: rgba($color-gray, 0.50);
+	border: 1px solid $color-gray-dark;
+	box-shadow: 0 0 3px 3px rgba($color-gray-darkness, 0.25);
+	@include border-radius(4px);
+	
+	&__autor {
+		font-size: 14px;
+		font-weight: bold;
+	}
+	
+	&__text {
+		margin: 5px 0px;
+	}
+	
+	&__date {
+		font-style: italic;
+		color: #007bff;
+	}
+}

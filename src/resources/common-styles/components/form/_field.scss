@@ -1,0 +1,32 @@
+.form-group {
+	margin-bottom: 16px;
+	
+	&__label {
+		display: inline-block;
+		margin-bottom: 6px;
+	}
+	
+	&__field {
+		width: 100%;
+		padding: $field-padding;
+		border: $field-border;
+		box-sizing: border-box;
+		line-height: $field-lineheight;
+		@include border-radius($field-radius);
+		
+		&--valid {
+			border-color: $field-valid-border;
+			box-shadow: $field-valid-shadow;
+		}
+		
+		&--error {
+			border-color: $field-invalid-border;
+			box-shadow: $field-invalid-shadow;
+		}
+		
+		&:focus {
+			border-color: $field-focus-border;
+			box-shadow: $field-focus-shadow;
+		}
+	}
+}

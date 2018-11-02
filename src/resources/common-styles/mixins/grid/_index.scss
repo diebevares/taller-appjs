@@ -1,0 +1,16 @@
+@import './grid-flex';
+@import './grid-normal';
+
+@mixin grid-gutter-change($gutter) {
+	margin-left: -($gutter/2)+px;
+	margin-right: -($gutter/2)+px;
+	
+	& > [class*='col'] {
+		padding-left: $gutter/2+px;
+		padding-right: $gutter/2+px;
+	}
+}
+
+@mixin make-offset($col) {
+	margin-left: ($col*100/$grid-columns) * 1%;
+}

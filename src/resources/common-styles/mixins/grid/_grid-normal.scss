@@ -1,0 +1,15 @@
+@mixin  make-row() {
+	margin-left: -($grid-gutter/2) * 1px;
+	margin-right: -($grid-gutter/2) * 1px;
+	@include clearfix();
+}
+
+@mixin make-col-base() {
+	padding-left: ($grid-gutter/2) * 1px;
+	padding-right: ($grid-gutter/2) * 1px;
+	float: left;
+}
+
+@mixin make-col($col) {
+	width: ($col*100/$grid-columns) * 1%;
+}

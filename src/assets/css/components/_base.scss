@@ -1,0 +1,31 @@
+@import '../variables';
+@import '../mixin';
+
+* {
+	box-sizing: border-box;
+	font-family: $font-base;
+	font-size: $font-base-size;
+	color: $font-base-color;
+	text-decoration: none;
+	outline: none;
+}
+
+html, body, .wrapper {
+	min-width: 100%;
+	min-height: 100%;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	_width: 100%;
+	_height: 100%;
+	-o-height: 100%;
+}
+
+.container {
+	max-width: $width-page;
+	padding-left: ($grid-gutter/2) * 1px;
+	padding-right: ($grid-gutter/2) * 1px;
+	@include center-block();
+}

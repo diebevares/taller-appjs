@@ -1,0 +1,43 @@
+@import '../variables';
+@import '../mixin';
+
+.navbar {
+	margin-bottom: 24px;
+	border: 1px solid $color-gray-dark;
+	@include gradient-vertical($color-gray-light, $color-gray);
+	@include border-radius(4px);
+	
+	&__item {
+		padding-left: 16px;
+		padding-right: 16px;
+		line-height: 36px;
+		position: relative;
+		
+		&--active {
+			box-shadow: inset 0px 0px 10px 2px $color-gray-dark;
+			
+			.active {
+				font-weight: bold;
+			}
+		}
+		
+		&:after {
+			width: 1px;
+			height: 100%;
+			border-width: 0px 1px 0px 1px;
+			border-style: solid;
+			border-color: transparent $color-gray-light transparent #C8C1C1;
+			content: " ";
+			position: absolute;
+			right: -1px;
+			top: 0px;
+			z-index: 1;
+		}
+		
+		&:last-child {
+			&:after {
+				display: none;
+			}
+		}
+	}
+}

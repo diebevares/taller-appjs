@@ -1,0 +1,10 @@
+.button {
+	padding: $field-padding;
+	background: #007bff;
+	border: 1px solid #007bff;
+	color: #FFF;
+	line-height: $field-lineheight;
+	display: inline-block;
+	cursor: pointer;
+	@include border-radius($field-radius);
+}

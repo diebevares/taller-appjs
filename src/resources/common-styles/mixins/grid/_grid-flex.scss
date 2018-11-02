@@ -1,0 +1,22 @@
+@mixin  make-row-flex() {
+	margin-left: -($grid-gutter/2) * 1px;
+	margin-right: -($grid-gutter/2) * 1px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@mixin make-col-base-flex() {
+	padding-left: ($grid-gutter/2) * 1px;
+	padding-right: ($grid-gutter/2) * 1px;
+}
+
+@mixin make-col-flex($col: false) {
+	@if(type-of($col) == 'number') {
+		max-width: ($col*100/$grid-columns) * 1%;
+		flex: 0 0 ($col*100/$grid-columns) * 1%;
+	} @else {
+		max-width: 100%;
+		flex-basis: 0;
+		flex-grow: 1;
+	}
+}

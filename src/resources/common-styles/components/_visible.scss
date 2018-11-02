@@ -1,0 +1,36 @@
+// ======================================================
+//	Hidden
+// ======================================================
+.hidden {
+	display: none;
+}
+
+@each $key, $value in $grid-response-base {
+	$breakpoint: if(type-of($value) == 'list', $key, $key+'-and-up');
+	
+	@include response-to($breakpoint) {
+		.hidden-#{$key} {
+			display: none;
+		}
+	}
+}
+
+
+// ======================================================
+//	Visible
+// ======================================================
+[class*='visible-'] {
+	display: none;
+}
+
+@each $key, $value in $grid-response-base {
+	$breakpoint: if(type-of($value) == 'list', $key, $key+'-and-up');
+	
+	@include response-to($breakpoint) {
+		@each $display in (block, inline, inline-block) {
+			.visible-#{$key}-#{$display} {
+				display: $display;
+			}
+		}
+	}
+}

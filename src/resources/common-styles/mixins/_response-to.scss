@@ -1,0 +1,21 @@
+@mixin response-to($breakpoint: '') {
+	@each $key, $value in $grid-response {
+		@if($key ==  $breakpoint) {
+			@media (min-width: nth($value, 1)) and (max-width: nth($value, 2)) {
+				@content;
+			}
+		}
+		
+		@if($key+'-and-up' ==  $breakpoint) {
+			@media (min-width: nth($value, 1)) {
+				@content;
+			}
+		}
+		
+		@if($key+'-and-down' ==  $breakpoint) {
+			@media (max-width: nth($value, 2)) {
+				@content;
+			}
+		}
+	}
+}

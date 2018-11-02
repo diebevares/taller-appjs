@@ -1,0 +1,66 @@
+.row {
+	@include make-row-flex();
+	
+	@each $key, $value in $grid-response-base  {
+		@if($key != 'xs') {
+			@include response-to($key+'-and-up') {
+				&-#{$key}--left {
+					justify-content: flex-start;
+				}
+				
+				&-#{$key}--center {
+					justify-content: center;
+				}
+				
+				&-#{$key}--right {
+					justify-content: flex-end;
+				}
+			}
+		} @else {
+			&--left {
+				justify-content: flex-start;
+			}
+			
+			&--center {
+				justify-content: center;
+			}
+			
+			&--right {
+				justify-content: flex-end;
+			}
+		}
+	}
+}
+
+[class*='col'] {
+	box-sizing: border-box;
+	@include make-col-base-flex();
+}
+
+.col {
+	@each $key, $value in $grid-response-base  {
+		@if($key != 'xs') {
+			@include response-to($key+'-and-up') {
+				&-#{$key} {
+					@include make-col-flex();
+				}
+				
+				@for $i from 1 through $grid-columns {
+					&-#{$key}-#{$i} {
+						@include make-col-flex($i);
+					}
+				}
+			}
+		} @else {
+			& {
+				@include make-col-flex();
+			}
+			
+			@for $i from 1 through $grid-columns {
+				&-#{$i} {
+					@include make-col-flex($i);
+				}
+			}
+		}
+	}
+}
