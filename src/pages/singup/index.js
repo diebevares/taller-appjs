@@ -62,7 +62,7 @@ export default class PageSingUP extends Component {
 									<div className="col-sm-6 col-12">
 										<div className="form-group">
 											<label className="form-group__label">Contraseña</label>
-											<input className="form-group__field" name="password" type="text"  placeholder="Contraseña" onChange={ this._onChange }/>
+											<input className="form-group__field" name="password" type="passowrd"  placeholder="Contraseña" onChange={ this._onChange }/>
 										</div>
 									</div>
 									
